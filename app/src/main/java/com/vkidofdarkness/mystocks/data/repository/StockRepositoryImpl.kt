@@ -1,8 +1,6 @@
 package com.vkidofdarkness.mystocks.data.repository
 
 import com.vkidofdarkness.mystocks.data.local.StockDB
-import com.vkidofdarkness.mystocks.data.local.StockDao
-import com.vkidofdarkness.mystocks.data.mapper.CompanyMapper
 import com.vkidofdarkness.mystocks.data.mapper.toCompanyListing
 import com.vkidofdarkness.mystocks.data.remote.StockAPI
 import com.vkidofdarkness.mystocks.domain.StockRepository
