@@ -1,7 +1,10 @@
 package com.vkidofdarkness.mystocks.data.repository
 
+import com.vkidofdarkness.mystocks.data.csv.CSVParser
+import com.vkidofdarkness.mystocks.data.csv.CompanyListingsParser
 import com.vkidofdarkness.mystocks.data.local.StockDB
 import com.vkidofdarkness.mystocks.data.mapper.toCompanyListing
+import com.vkidofdarkness.mystocks.data.mapper.toCompanyListingEntity
 import com.vkidofdarkness.mystocks.data.remote.StockAPI
 import com.vkidofdarkness.mystocks.domain.StockRepository
 import com.vkidofdarkness.mystocks.domain.model.CompanyListing
@@ -16,7 +19,8 @@ import javax.inject.Singleton
 @Singleton
 class StockRepositoryImpl @Inject constructor(
     val api: StockAPI,
-    val db: StockDB
+    val db: StockDB,
+    val companyListingsParser: CSVParser<CompanyListing>
 ): StockRepository {
 
     private val dao = db.dao;
@@ -42,13 +46,28 @@ class StockRepositoryImpl @Inject constructor(
             }
             val remoteListings = try {
                 val response = api.getListings()
-                response.byteStream()
+                companyListingsParser.parse(response.byteStream())
             } catch (e: IOException) {
                 e.printStackTrace()
                 emit(Resource.Error("Невозможно загрузить данные."))
+                null
             } catch (e: HttpException) {
                 e.printStackTrace()
                 emit(Resource.Error("Невозможно загрузить данные."))
+                null
+            }
+
+            remoteListings?.let { listings ->
+                dao.clearCompanyListings()
+                dao.insertCompanyListings(
+                    listings.map { it.toCompanyListingEntity() }
+                )
+                emit(Resource.Success(
+                    data = dao
+                        .searchCompanyListing("")
+                        .map { it.toCompanyListing() }
+                ))
+                emit(Resource.Loading(false))
             }
         }
     }
