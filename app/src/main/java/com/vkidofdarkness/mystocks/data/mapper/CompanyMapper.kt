@@ -1,6 +1,8 @@
 package com.vkidofdarkness.mystocks.data.mapper
 
 import com.vkidofdarkness.mystocks.data.local.CompanyListingEntity
+import com.vkidofdarkness.mystocks.data.remote.dto.CompanyInfoDto
+import com.vkidofdarkness.mystocks.domain.model.CompanyInfo
 import com.vkidofdarkness.mystocks.domain.model.CompanyListing
 
 // функции расширения, определяющие как мы воспринимаем компанию объект entity и преобразуем в model
@@ -19,3 +21,11 @@ import com.vkidofdarkness.mystocks.domain.model.CompanyListing
             exchange = exchange
         )
     }
+
+fun CompanyInfoDto.toCompanyInfo(): CompanyInfo {
+    return CompanyInfo(
+        symbol = symbol ?: "",
+        name = name ?: "",
+        country = country ?: ""
+    )
+}
