@@ -3,7 +3,7 @@ package com.vkidofdarkness.mystocks.data.mapper
 import com.vkidofdarkness.mystocks.data.local.CompanyListingEntity
 import com.vkidofdarkness.mystocks.domain.model.CompanyListing
 
-// Здесь функции расширения, определяющие как мы воспринимаем компанию объект entity и преобразуем в model
+// функции расширения, определяющие как мы воспринимаем компанию объект entity и преобразуем в model
     fun CompanyListingEntity.toCompanyListing(): CompanyListing {
         return CompanyListing(
             name = name,

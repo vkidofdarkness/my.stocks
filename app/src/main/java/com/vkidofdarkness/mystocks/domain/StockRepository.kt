@@ -1,6 +1,5 @@
 package com.vkidofdarkness.mystocks.domain
 
-import androidx.room.Query
 import com.vkidofdarkness.mystocks.domain.model.CompanyListing
 import com.vkidofdarkness.mystocks.util.Resource
 import kotlinx.coroutines.flow.Flow

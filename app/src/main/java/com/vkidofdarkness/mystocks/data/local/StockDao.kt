@@ -5,7 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
-// Функции для взаимодействия с БД
+// функции для взаимодействия с БД
 @Dao
 interface StockDao {
 

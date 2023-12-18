@@ -4,6 +4,7 @@ import okhttp3.ResponseBody
 import retrofit2.http.GET
 import retrofit2.http.Query;
 
+// интерфейс для работы с API для получения информации о статусе листинга акций
 interface StockAPI {
 
     @GET("query?function=LISTING_STATUS")
