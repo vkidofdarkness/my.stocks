@@ -9,7 +9,6 @@ import retrofit2.http.Query;
 interface StockAPI {
 
     @GET("query?function=LISTING_STATUS")
-    //@GET("securities.csv")
     suspend fun getListings(
         @Query("apikey") apikey: String = API_KEY
     ): ResponseBody
@@ -29,6 +28,5 @@ interface StockAPI {
     companion object {
         const val API_KEY = "JURT9KFNBGK98R0F"
         const val BASE_URL = "https://alphavantage.co"
-        //const val BASE_URL = "https://iss.moex.com/iss/"
     }
 }

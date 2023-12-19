@@ -1,4 +1,4 @@
-package com.vkidofdarkness.mystocks.domain
+package com.vkidofdarkness.mystocks.domain.repository
 
 import com.vkidofdarkness.mystocks.domain.model.CompanyInfo
 import com.vkidofdarkness.mystocks.domain.model.CompanyListing

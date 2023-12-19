@@ -4,7 +4,7 @@ import com.vkidofdarkness.mystocks.data.csv.CSVParser
 import com.vkidofdarkness.mystocks.data.csv.CompanyListingsParser
 import com.vkidofdarkness.mystocks.data.csv.IntradayInfoParser
 import com.vkidofdarkness.mystocks.data.repository.StockRepositoryImpl
-import com.vkidofdarkness.mystocks.domain.StockRepository
+import com.vkidofdarkness.mystocks.domain.repository.StockRepository
 import com.vkidofdarkness.mystocks.domain.model.CompanyListing
 import com.vkidofdarkness.mystocks.domain.model.IntradayInfo
 import dagger.Binds

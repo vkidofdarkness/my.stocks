@@ -1,13 +1,12 @@
 package com.vkidofdarkness.mystocks.data.repository
 
 import com.vkidofdarkness.mystocks.data.csv.CSVParser
-import com.vkidofdarkness.mystocks.data.csv.CompanyListingsParser
 import com.vkidofdarkness.mystocks.data.local.StockDB
 import com.vkidofdarkness.mystocks.data.mapper.toCompanyInfo
 import com.vkidofdarkness.mystocks.data.mapper.toCompanyListing
 import com.vkidofdarkness.mystocks.data.mapper.toCompanyListingEntity
 import com.vkidofdarkness.mystocks.data.remote.StockAPI
-import com.vkidofdarkness.mystocks.domain.StockRepository
+import com.vkidofdarkness.mystocks.domain.repository.StockRepository
 import com.vkidofdarkness.mystocks.domain.model.CompanyInfo
 import com.vkidofdarkness.mystocks.domain.model.CompanyListing
 import com.vkidofdarkness.mystocks.domain.model.IntradayInfo

@@ -2,6 +2,7 @@ package com.vkidofdarkness.mystocks
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.vkidofdarkness.mystocks.domain.repository.StockRepository
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,6 +20,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.plcoding.stockmarketapp", appContext.packageName)
+        assertEquals("com.vkidofdarkness.mystocks", appContext.packageName)
     }
 }

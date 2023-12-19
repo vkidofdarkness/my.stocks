@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vkidofdarkness.mystocks.domain.StockRepository
+import com.vkidofdarkness.mystocks.domain.repository.StockRepository
 import com.vkidofdarkness.mystocks.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job

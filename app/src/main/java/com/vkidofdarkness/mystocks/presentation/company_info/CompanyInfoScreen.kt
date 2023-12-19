@@ -1,6 +1,5 @@
 package com.vkidofdarkness.mystocks.presentation.company_info
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Divider
@@ -35,7 +34,7 @@ fun CompanyInfoScreen(
                 Text(
                     text = company.name,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
+                    fontSize = 32.sp,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -66,7 +65,7 @@ fun CompanyInfoScreen(
                 Spacer(modifier = Modifier.height(8.dp))
                 if(state.stockInfos.isNotEmpty()) {
                     Text(
-                        text = "Цена на ${state.stockInfos.last().date}: ${state.stockInfos.last().close}$",
+                        text = "Цена: ${state.stockInfos.last().close}$",
                         fontSize = 14.sp,
                         modifier = Modifier.fillMaxWidth(),
                     )
