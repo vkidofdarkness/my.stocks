@@ -2,6 +2,7 @@ package com.vkidofdarkness.mystocks.presentation.company_info
 
 import android.graphics.Paint
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -18,8 +19,13 @@ import kotlin.math.roundToInt
 fun StockChart(
     infos: List<IntradayInfo> = emptyList(),
     modifier: Modifier = Modifier,
-    graphColor: Color = Color.Yellow
+    darkTheme: Boolean = isSystemInDarkTheme(),
 ) {
+    val graphColor = if (darkTheme) {
+        Color.Yellow
+    } else {
+        Color.Blue
+    }
     val spacing = 100f
     val transparentGraphColor = remember {
         graphColor.copy(alpha = 0.5f)
@@ -33,7 +39,11 @@ fun StockChart(
     val density = LocalDensity.current
     val textPaint = remember(density) {
         Paint().apply {
-            color = android.graphics.Color.WHITE
+            color = if (darkTheme) {
+                android.graphics.Color.WHITE
+            } else {
+                android.graphics.Color.BLACK
+            }
             textAlign = Paint.Align.CENTER
             textSize = density.run { 12.sp.toPx() }
         }
