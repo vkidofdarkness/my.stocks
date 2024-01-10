@@ -1,4 +1,4 @@
-package com.vkidofdarkness.mystocks.ui.theme
+package com.vkidofdarkness.mystocks.ui
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

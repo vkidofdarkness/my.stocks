@@ -9,7 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.DestinationsNavHost
 import com.vkidofdarkness.mystocks.presentation.NavGraphs
-import com.vkidofdarkness.mystocks.ui.theme.MyStocksAppTheme
+import com.vkidofdarkness.mystocks.ui.MyStocksAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
